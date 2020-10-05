@@ -110,7 +110,7 @@ The complete set of escape sequences is :
 			}
 
 
-// Type Conversion :
+// Type Conversion (stopped) :
 // 	
 // 		
  
@@ -137,3 +137,6 @@ The complete set of escape sequences is :
 			else
 				return c;
 		}
+// Increment and Decrement Operators :
+// 	
+//
