@@ -33,6 +33,7 @@ int ckexp_regul(char *a,int l){ /* Check whether the algebrac expression regular
 	if(i == l )
 		return 1;
 	else 
+		printf("Not an regular algebraic expression.\n");
 		return 0;
 }
 main(int argc, char* argv[]){
