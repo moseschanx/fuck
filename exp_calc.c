@@ -36,7 +36,25 @@ int ckexp_regul(char *a,int l){ /* Check whether the algebrac expression regular
 		printf("Not an regular algebraic expression.\n");
 		return 0;
 }
+
+double add(double a,double b){
+	return a+b;
+}
+double sub(double a,double b){
+	return a-b;
+}
+double mul(double a,double b){
+	return a*b;
+}
+double dev(double a,double b){
+	return a/b;
+}
+
+
 main(int argc, char* argv[]){
+
+/* Program argument checking stage */
+
 	if(argc != 2 ){
 		printf("Usage : calc [algebrac_expresson] \n ");
 		return -1;
@@ -44,9 +62,18 @@ main(int argc, char* argv[]){
 	char* c_exp = argv[1];
 
 	int exp_length = gslen(c_exp);
+
 	
-	if(!(exp_length > 200 && ckexp_regul(c_exp,exp_length)))
+	if(!(exp_length < 200 && ckexp_regul(c_exp,exp_length)))
 		return -1;
+
+/* Program argument analyse stage */
+
+	int i;
+	for(i = 0; c_exp[i] != '\0'; ++i){
+		
+			
+	}	
 	
 }
 	
