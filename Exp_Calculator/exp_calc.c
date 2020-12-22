@@ -37,19 +37,7 @@ int ckexp_regul(char *a,int l){ /* Check whether the algebrac expression regular
 		return 0;
 }
 
-double add(double a,double b){
-	return a+b;
 }
-double sub(double a,double b){
-	return a-b;
-}
-double mul(double a,double b){
-	return a*b;
-}
-double dev(double a,double b){
-	return a/b;
-}
-
 
 main(int argc, char* argv[]){
 
