@@ -12,7 +12,13 @@
  * 		M(ultiplication) and D(divition)
  * 		A(ddition) and S(ubctraction)
  * 
+ * 	Parser :
+ * 		Lexical Analysis (Create Tokens)
+ * 		Tokens
+ * 		Syntactic Analysis (Create Tree)
+ *
  */
+
 int gslen(char *a){ /* Get the length of a character string */
 	int len = 0;
 
