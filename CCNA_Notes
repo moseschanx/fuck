@@ -1,0 +1,98 @@
+
+
+
+
+Configure with configuration dialog ? n
+	//Select procedure configuration mode or manual 
+	
+> : normal usermode 
+	enable 
+# : Privileged User mode 
+{
+	Reset everything : reload 
+	
+	Some Pre configurations :
+	{
+	}
+
+	show running-config // Real time input instructions (cache)
+	show ip interface brief //Brief summary of IP status and configuration 
+
+
+}
+debugging system{
+
+	debug logging system : debug ip packet ( global )
+	closing debugging system : undebug all
+
+
+}
+
+helping system : ?
+
+Configuration mode : configure terminal / conf t ( global )
+{	
+`	Some Pre configurations :
+	{
+		hostname <host_name>
+		no ip domain-lookup
+
+		Encryption for this mode :  enable secret <String>
+		//Then back to line mode to enforce setting
+	}
+	
+	Entering other mode : 
+	
+		Line mode : line console 0
+
+		Interface mode : interface <interface_name>
+
+	Exiting operation :	
+		Back to mode layer by layer : exit 
+		Back to global configuration mode directly : end
+		Back to normal user from privilleged user : disable 
+			coorsponding to : enable 
+
+	Adding Username & password :
+		
+		username <String> password/secret <String>
+		//Then go into Line mode to enforce setting
+		// line console 0
+		// login local  (local database)
+		Encryption for plain text: service password-encryption	
+	Setting User Privillege :
+		username <String> privillege secret <String>
+		//Range in 0-15 , accending order.
+
+	Configuring DHCP server :
+		ip dhcp pool <pool_name>
+		network <effective_ip_address> //represent a network segment 
+		default-router <ip_address> //Usually ? local host
+		dns-server <ip_address>
+}
+
+Line mode : 
+{
+	Entering Line mode : line console 0
+
+	Some Pre configurations :
+	{
+	
+	logging synchronous
+
+	exec-timeout 0 0  //Default 10 min
+	
+	}
+
+	Changing password : passwd <String>
+			    login //enforce your setting
+
+
+}
+
+
+
+
+
+
+
