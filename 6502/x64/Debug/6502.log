@@ -1,0 +1,3 @@
+﻿  main.cpp
+C:\Users\moses\code\fuck\6502\main.cpp(100,31): error C2106: '=': left operand must be l-value
+C:\Users\moses\code\fuck\6502\main.cpp(101,20): error C2106: '=': left operand must be l-value
