@@ -5,15 +5,15 @@ openssl req -days 365  -newkey rsa:2048 -keyout ca.key -x509 -nodes -new -out ca
 dir
 
 echo "#generating certificate and key for server" 
-openssl req -days 365  -newkey rsa:2048	-keyout server.key -nodes -new -out server.csr 
+openssl req -days 365  -newkey rsa:2048	-keyout server.key -nodes -new -out server.csr -extensions server 
 
-openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key --CAcreateserial -out server.crt
+openssl x509 -req -days 365 -in server.csr -CA ca.crt -CAkey ca.key --CAcreateserial -out server.crt -extensions server 
 dir
 
 echo "#generating certificate and key for client"
-openssl req -days 365  -newkey rsa:2048	-keyout client.key -nodes -new -out client.csr 
+openssl req -days 365  -newkey rsa:2048	-keyout client.key -nodes -new -out client.csr -extensions client 
 
-openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key --CAcreateserial -out client.crt
+openssl x509 -req -days 365 -in client.csr -CA ca.crt -CAkey ca.key --CAcreateserial -out client.crt  -extensions client
 dir
 
 echo "#generating tls-auth key"
