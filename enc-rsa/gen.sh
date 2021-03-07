@@ -58,8 +58,8 @@ echo -e " ### ${GREEN} Writing client config files done. ${NONE} ### "
 
 
 #generating root CA certificate and key
-oecho -e " ### ${BLUE}  generating root CA certificate and key ${NONE} ### "
-penssl req -days 365  -newkey rsa:2048 -keyout $current_dir/ca.key -x509 -nodes -new -out $current_dir/ca.crt 
+echo -e " ### ${BLUE}  generating root CA certificate and key ${NONE} ### "
+openssl req -days 365  -newkey rsa:2048 -keyout $current_dir/ca.key -x509 -nodes -new -out $current_dir/ca.crt 
 echo -e " ### ${GREEN}  root CA certificate and key generated ${NONE} ### "
 
 
@@ -100,4 +100,4 @@ openvpn --genkey -secret $current_dir/ta.key
 #generating the Diffie hellman parameters
 openssl dhparam -out $current_dir/dh2048.pem 2048
 
-
+exit
