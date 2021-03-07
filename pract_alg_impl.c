@@ -1,18 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
-
-#define PI 3.1415926
-
-float coin_volume(float r,float h ){
-
-
-	/* Formula for Cubic coin : Pi * r^2 * h */
-	float temp  = pow(r,2);
-	float result = PI*h*temp;
-	return result;
 	
-}
 
 int trans_to_ascii(char c){
 	
